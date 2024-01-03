@@ -1,10 +1,8 @@
 const mongoose = require("mongoose");
-
-const DB =
-	"mongodb+srv://nitinjajoria97:nitinjajoria123@cluster1.798a1pd.mongodb.net/HabitTracker?retryWrites=true&w=majority";
+const { MONGODB_URL } = process.env;
 
 mongoose
-	.connect(DB, { useNewUrlParser: true, useUnifiedTopology: true })
+	.connect(MONGODB_URL, { useNewUrlParser: true, useUnifiedTopology: true })
 	.then(() => {
 		console.log("Connection successful!");
 	})
